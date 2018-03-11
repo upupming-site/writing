@@ -40,12 +40,19 @@
 <div id="wmd-preview" class="column wmd-preview">
 <noscript>This text editor requires JavaScript.</noscript>
 </div>
-<div id="helpicon" class="unselectable">帮助信息</div>
+
+<div id="helpShow">
+<div id="helpicon" class="unselectable">帮助</div>
+<div id="closeHelpicon" class="unselectable">x</div>
+</div>
+
 <div id="help">
 <div id="closeicon" class="unselectable">X</div>    
 <pre>    
 <a href="https://github.com/josephernest/writing">Writing</a> is a lightweight distraction-free text editor.
 Write text on the left, and the result is displayed on the right.
+
+Writing 轻量、简洁、高效写作工具，支持 Markdown、 LaTeX 。
 
 Commands
 --------
@@ -165,6 +172,9 @@ $('#helpicon').click(function() {
 
 $('#closeicon, #wmd-input, #wmd-preview').click(function() {
     $('#help').hide();
+});
+$('#closeHelpicon').click(function(){
+    $('#helpShow').hide();
 });
 
 $(document).on('keydown', function(e) {
